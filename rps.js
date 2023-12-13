@@ -1,11 +1,3 @@
-//Have 3 choices for computer (rock, paper, scissors)
-//Get user to input choice
-//Randomize computer choice
-//Display user choice and computer choice
-//Compare choices and decide which won
-//Repeat 5 times
-//Count number of wins each got
-//Alert whoever has most wins as winner
 
 const choices = ["rock", "paper", "scissors"];
 
@@ -42,64 +34,34 @@ function playRound(playerSelection, computerSelection) {
      }
     };
 
-   //  let firstPlayerChoice = getPlayerChoice();
-   //  let firstComputerChoice = getComputerChoice();
 
-   //  let secondPlayerChoice = getPlayerChoice();
-   // let secondComputerChoice = getComputerChoice();
 
-   // let thirdPlayerChoice = getPlayerChoice();
-   //    let thirdComputerChoice = getComputerChoice();
-
-   //    let fourthPlayerChoice = getPlayerChoice();
-   //    let fourthComputerChoice = getComputerChoice();
-
-   //    let fifthPlayerChoice = getPlayerChoice();
-   //    let fifthComputerChoice = getComputerChoice();
-
- function game() {
    let winners = [];
-
-
-   let firstPlayerChoice = getPlayerChoice();
-   let firstComputerChoice = getComputerChoice();
-      winners.push(playRound(firstPlayerChoice, firstComputerChoice));
-      // console.log(playRound(firstPlayerChoice, firstComputerChoice));
-
-      let secondPlayerChoice = getPlayerChoice();
-      let secondComputerChoice = getComputerChoice();
-      winners.push(playRound(secondPlayerChoice, secondComputerChoice));
-      // console.log(playRound(secondPlayerChoice, secondComputerChoice));
-
-      let thirdPlayerChoice = getPlayerChoice();
-      let thirdComputerChoice = getComputerChoice();
-      winners.push(playRound(thirdPlayerChoice, thirdComputerChoice));
-      // console.log(playRound(thirdPlayerChoice, thirdComputerChoice));
-
-      let fourthPlayerChoice = getPlayerChoice();
-      let fourthComputerChoice = getComputerChoice();
-      winners.push(playRound(fourthPlayerChoice, fourthComputerChoice));
-      // console.log(playRound(fourthPlayerChoice, fourthComputerChoice));
-
-      let fifthPlayerChoice = getPlayerChoice();
-      let fifthComputerChoice = getComputerChoice();
-      winners.push(playRound(fifthPlayerChoice, fifthComputerChoice));
-      // console.log(playRound(fifthPlayerChoice, fifthComputerChoice));
+ function game() {
+   
+for (let i = 0; i <= 4; i++) {
+   let myChoice = getPlayerChoice();
+   let compChoice = getComputerChoice();
+      winners.push(playRound(myChoice, compChoice));
 
       console.log(winners);
 
+}
       let numPlayerWins = winners.filter(score => score === "player won!").length;
       let numComputerWins = winners.filter(score => score === "computer won!").length;
       
 
       if (numPlayerWins > numComputerWins) {
-         alert("you won HELL YEAH!"); 
+         alert("you won the round, HELL YEAH!"); 
+         return "you won the round,  HELL YEAH!";
       } else if (numComputerWins > numPlayerWins) {
-         alert("you lost! computer won!");
+         alert("you lost the round! computer won!");
+         return "you lost the round! computer won!";
       } else {
-         alert("it's a tie, try again");
+         alert("it's a tied round, try again");
+         return "it's a tied round, try again";
       }
-      }
+      
+   }
 
      game();
-     
